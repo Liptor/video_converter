@@ -63,7 +63,6 @@ export const getVideo = (req: Request, res: Response) => {
   const filePath = path.join(convertedDir, req.params.filename);
 
   if (!fs.existsSync(filePath)) {
-    
     res.status(404).json({ error: "Файл не найден" });
     return;
   }

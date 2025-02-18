@@ -1,10 +1,12 @@
 import { Router } from 'express';
 import multer from 'multer';
-import path from 'path';
 import { getVideo, uploadVideo } from '../controllers/video';
-import upload from '../middlewares/multerMiddleware';
+
 
 export const router = Router();
+
+
+const upload = multer({ dest: "../converted" });
 
 router.post('/upload', upload.single('file'), uploadVideo);
 

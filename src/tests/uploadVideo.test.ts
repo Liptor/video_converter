@@ -6,7 +6,7 @@ import fs from "fs";
 import { uploadVideo, getVideo } from "../controllers/video";
 
 const app = express();
-const upload = multer({ dest: "converted/" });
+const upload = multer({ dest: "../converted" });
 
 app.post("/upload", upload.single("file"), uploadVideo);
 app.get("/download/:filename", getVideo);
